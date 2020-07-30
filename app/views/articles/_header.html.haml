@@ -5,9 +5,15 @@
       =icon('fas','truck')
       デリ
     .Top__UserNav
-      .Top__UserNav__Btn
-        =link_to "ログイン", "#", class: "Top__UserNav__Btn--Post"
-        =link_to "新規登録", "#", class: "Top__UserNav__Btn--Post"
+      - if user_signed_in?
+        .Top__UserNav__Btn
+          =link_to "投稿する", "#", class: "Top__UserNav__Btn--Post"
+          =link_to "マイページ", "/users/#{current_user.id}", class: "Top__UserNav__Btn--Post"
+          =link_to "ログアウト", destroy_user_session_path, class: "Top__UserNav__Btn--Post", method: :delete
+      - else
+        .Top__UserNav__Btn
+          =link_to "ログイン", new_user_session_path, class: "Top__UserNav__Btn--Post"
+          =link_to "新規登録", new_user_registration_path, class: "Top__UserNav__Btn--Post"
     
   .Area
     %ul.Area__Region
