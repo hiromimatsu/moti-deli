@@ -7,7 +7,7 @@
     .Top__UserNav
       - if user_signed_in?
         .Top__UserNav__Btn
-          =link_to "投稿する", "#", class: "Top__UserNav__Btn--Post"
+          =link_to "投稿する", new_article_path, class: "Top__UserNav__Btn--Post"
           =link_to "マイページ", "/users/#{current_user.id}", class: "Top__UserNav__Btn--Post"
           =link_to "ログアウト", destroy_user_session_path, class: "Top__UserNav__Btn--Post", method: :delete
       - else
