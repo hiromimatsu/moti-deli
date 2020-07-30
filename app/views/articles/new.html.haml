@@ -4,7 +4,8 @@
     = f.label :image, class: 'image' do
       =f.file_field :image, class: 'hidden'
     = f.text_field :restaurant, class: 'Container__Restaurant', placeholder: "【エリア名】店名"
-    = f.collection_radio_buttons :area_id, Area.all, :id, :name 
+    .Constant__Radio
+      = f.collection_radio_buttons :area_id, Area.all, :id, :name
     = f.text_field :instagram, class: 'Container__Instagram', placeholder: "Instagram URL"
     = f.text_area :menu, class: "Container__Menu", placeholder: "メニュー"
     = f.text_area :rule, class: "Container__Rule", placeholder: "利用ルール"

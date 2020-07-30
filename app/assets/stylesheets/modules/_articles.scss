@@ -4,7 +4,7 @@
 
 .Contents {
   text-align: center;
-  color: mediumpurple;
+  color: gray;
   font-size: 30px;
   .Container {
     display: flex;
@@ -12,6 +12,10 @@
     flex-direction: column;
     font-size: 20px;
     margin-top: 20px;
+    &__Radio {
+      display: inline_flex;
+      color: black;
+    }
     &__Restaurant, &__Instagram {
       border-radius: 10px;
       border: 2px solid gray;
