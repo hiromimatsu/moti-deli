@@ -1,12 +1,13 @@
 .Header {
   height: 100px;
+  font-family: 'Hiragino Maru Gothic ProN';
   
   .Top {
     height: 60px;
     background-color: orange;
     display: flex;
     justify-content: space-between;
-    padding-top: 7px;
+    padding: 7px 0 0 10px;
     &__Title {
       color: white;
       font-size: 30px;
@@ -36,8 +37,7 @@
     height: 40px;
     background-color: wheat;
     font-size: 20px;
-  }
-  ul {
+    &__Region {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,8 +46,9 @@
       text-decoration: none;
       color: black;
     }
-    li {
-      margin-left: 20px;
+      &__Select {
+        margin-left: 20px;
+      }
     }
   }
 }

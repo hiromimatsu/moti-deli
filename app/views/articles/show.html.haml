@@ -1,17 +1,18 @@
+.Restaurant
+  = @article.restaurant
 .Article2
   = image_tag @article.image.url, class: "Article2__Image2"
   .Article2__Contents
-    .Article2__Contents__Restaurant
-      = @article.restaurant
-    %br
-    =icon('fas','shopping-bag')
-    テイクアウト メニュー
+    .Article2__Contents__Title
+      =icon('fas','shopping-bag')
+      テイクアウト メニュー
     %br
     .Article2__Contents__Show
       = @article.menu
     %br
-    =icon('fas','info-circle')
-    利用ルール
+    .Article2__Contents__Title
+      =icon('fas','info-circle')
+      利用ルール
     %br
     .Article2__Contents__Show
       = @article.rule

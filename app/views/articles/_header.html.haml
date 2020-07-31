@@ -16,8 +16,5 @@
           =link_to "新規登録", new_user_registration_path, class: "Top__UserNav__Btn--Post"
     
   .Area
-    %ul.Area__Region
-      %li.Area__Region__Select
-        関東▼
-      %li.Area__Region__Select
-        関西▼
+    .Area__Region
+      =link_to "関東▼", "/articles"

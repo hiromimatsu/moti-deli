@@ -6,6 +6,8 @@
   text-align: center;
   color: gray;
   font-size: 30px;
+  margin-top: 10px;
+  font-family: 'Hiragino Maru Gothic ProN';
   .Container {
     display: flex;
     align-items: center;
@@ -14,13 +16,20 @@
     margin-top: 20px;
     &__Radio {
       display: inline_flex;
-      color: black;
     }
-    &__Restaurant, &__Instagram {
+    &__Restaurant {
+      border-radius: 10px;
+      border: 2px solid gray;
+      width: 50%;
+      margin: 20px 0 20px 0;
+      padding: 5px;
+    }
+    &__Instagram {
       border-radius: 10px;
       border: 2px solid gray;
       width: 50%;
       margin-top: 20px;
+      padding: 5px;
     }
     &__Menu, &__Rule {
       border-radius: 10px;
@@ -28,6 +37,7 @@
       height: 100px;
       width: 50%;
       margin-top: 20px;
+      padding: 5px;
     }
     &__Btn {
       border-radius: 10px;
