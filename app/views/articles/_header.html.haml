@@ -1,13 +1,17 @@
 .Header
   .Top
     .Top__Title
+      .Top__Title__Theme
       もち
       =icon('fas','truck')
       デリ
+      .Top__Title__Search
+      = form_with(url: search_articles_path, local: true, method: :get) do |f|
+        = f.text_field :keyword, placeholder: "投稿を検索する",class: "Top__Title__Search__Form"
     .Top__UserNav
       - if user_signed_in?
         .Top__UserNav__Btn
-          =link_to "投稿する", new_article_path, class: "Top__UserNav__Btn--Post"
+          =link_to "投稿", new_article_path, class: "Top__UserNav__Btn--Post"
           =link_to "マイページ", "/users/#{current_user.id}", class: "Top__UserNav__Btn--Post"
           =link_to "ログアウト", destroy_user_session_path, class: "Top__UserNav__Btn--Post", method: :delete
       - else

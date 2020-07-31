@@ -22,8 +22,15 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
-  private
+  def search
+    @tweets = Tweet.search(params[:keyword])
+    #respond_to do |format|
+      #format.html
+      #format.json
+    #end
+  end
 
+  private
   def article_params
     params.require(:article).permit(:restaurant, :image, :instagram, :menu, :rule, :area_id).merge(user_id: current_user.id)
   end
