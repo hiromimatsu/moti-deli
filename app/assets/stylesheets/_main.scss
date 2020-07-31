@@ -1,0 +1,12 @@
+.Main {
+  height: calc(100vh - 100px);
+  overflow: scroll;
+  .Article {
+    margin-top: 10px;
+    &__Image {
+      margin: 15px 20px;
+      height: 40vh;
+      border-radius: 10px;
+    }
+  }
+}

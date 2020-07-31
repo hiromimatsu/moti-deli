@@ -1,0 +1,57 @@
+.UserName {
+  background-color: royalblue;
+  color: white;
+  width: 100%;
+}
+.Restaurant {
+  background: linear-gradient(transparent 70%, #a7d6ff 70%);
+  font-size: 40px;
+  margin-top: 20px;
+  padding-left: 30px;
+  font-family: 'Hiragino Maru Gothic ProN';
+}
+
+.Article2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  font-family: 'Hiragino Maru Gothic ProN';
+  &__Image2 {
+    height: 300px;
+    width: 300px;
+    border-radius: 20px;
+  }
+  &__Contents {
+    margin-left: 20px;
+    &__Title {
+    font-size: 25px;
+    color: mediumvioletred;
+    }
+    &__Show {
+      font-size: 20px;
+      color: gray;
+    }
+    &__Logo {
+      width: 300px;
+      font-size: 20px;
+    }
+    &__Btn {
+      text-decoration: none;
+      border-radius: 20px;
+      height: 100px;
+      color: #fff;
+      font-size: 30px;
+      padding: 10px;
+      a {
+        text-decoration: none;
+      }
+      &--Icon{
+        padding-right: 10px;
+      }
+      &--Instagram {
+        background-color: #fc76bf;
+      }
+    }
+  }
+}
