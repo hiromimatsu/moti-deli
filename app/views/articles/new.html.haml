@@ -1,5 +1,6 @@
 .Contents
-  新規投稿ページ
+  .Contents__Title
+    新規投稿ページ
   = form_with model: @article,local: true,class:"Container" do |f|
     = f.label :image, class: 'image' do
       =f.file_field :image, class: 'hidden'

@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_07_30_065612) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["area_id"], name: "index_articles_on_area_id"
+    t.index ["menu"], name: "index_articles_on_menu", length: 32
     t.index ["restaurant"], name: "index_articles_on_restaurant"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end

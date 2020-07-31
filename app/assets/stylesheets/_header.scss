@@ -7,10 +7,20 @@
     background-color: orange;
     display: flex;
     justify-content: space-between;
-    padding: 7px 0 0 10px;
+    padding-top: 7px;
     &__Title {
       color: white;
       font-size: 30px;
+      display: flex;
+      margin-left: 10px;
+      &__Search {
+        margin-left: 20px;
+        &__Form {
+          border-radius: 10px;
+          padding-left: 10px;
+          font-size: 20px;
+        }
+      }
     }
     &__UserNav {
       display: flex;

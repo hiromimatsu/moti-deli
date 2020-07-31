@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :move_to_index, expect: :index
+  before_action :move_to_index, expect: [:index, :search]
 
   def index
     @articles = Article.all
@@ -22,8 +22,15 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
-  private
+  def search
+    @articles = Article.search(params[:keyword])
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
 
+  private
   def article_params
     params.require(:article).permit(:restaurant, :image, :instagram, :menu, :rule, :area_id).merge(user_id: current_user.id)
   end
