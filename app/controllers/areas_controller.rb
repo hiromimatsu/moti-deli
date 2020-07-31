@@ -1,5 +1,7 @@
 class AreasController < ApplicationController
   def index
-    @areas = Area.find(params[:id])
+    @area = Area.new
+    @area = Area.find(params[:id])
   end
+
 end

@@ -21,6 +21,11 @@
     &__Radio {
       display: inline_flex;
     }
+    .image {
+      .hidden {
+        display: none;
+      }
+    }
     &__Restaurant {
       border-radius: 10px;
       border: 2px solid gray;

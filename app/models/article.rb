@@ -6,7 +6,15 @@ class Article < ApplicationRecord
 
   def self.search(search)
     if search
-      Article.where('restaurant LIKE(?) OR menu LIKE?', "%#{search}%","%#{search}")
+      Article.where('restaurant LIKE(?) OR menu LIKE(?)', "%#{search}%","%#{search}%")
+    else
+      Article.all
+    end
+  end
+
+  def self.area(area_id)
+    if search
+      Article.where(area_id: area_id)
     else
       Article.all
     end

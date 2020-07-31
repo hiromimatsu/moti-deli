@@ -22,9 +22,28 @@
   .Area
     .Area__Region
       .Area__Region__Select
-        =link_to "All▼", "/articles"
+        =link_to "関東▼", controller: "articles", action: "index", area_id: 1
+
       .Area__Region__Select
-        =link_to "関東▼", "/articles"
+        =link_to "関西▼", controller: "articles", action: "index", area_id: 2
+
+      .Area__Region__Select
+        =link_to "北海道▼", controller: "articles", action: "index", area_id: 3
+
+      .Area__Region__Select
+        =link_to "東北▼", controller: "articles", action: "index", area_id: 4
+      
+      .Area__Region__Select
+        =link_to "北陸信越▼", controller: "articles", action: "index", area_id: 5
+
+      .Area__Region__Select
+        =link_to "東海▼", controller: "articles", action: "index", area_id: 6
+      
+      .Area__Region__Select
+        =link_to "中国▼", controller: "articles", action: "index", area_id: 7
+
+      .Area__Region__Select
+        =link_to "九州▼", controller: "articles", action: "index", area_id: 8
 
 .Main
   .Article

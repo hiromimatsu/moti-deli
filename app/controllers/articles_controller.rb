@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :move_to_index, expect: [:index, :search]
 
   def index
-    @articles = Article.all
+    @articles = Article.where(area_id: params[:area_id])
   end
 
   def new
@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = Article.create(article_params)
     if @article.save
     redirect_to root_path
     else
