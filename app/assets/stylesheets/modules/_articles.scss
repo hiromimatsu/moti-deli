@@ -6,8 +6,12 @@
   text-align: center;
   color: gray;
   font-size: 30px;
-  margin-top: 10px;
   font-family: 'Hiragino Maru Gothic ProN';
+  &__Title {
+    padding: 10px;
+    color: white;
+    background-color: mediumpurple;
+  }
   .Container {
     display: flex;
     align-items: center;

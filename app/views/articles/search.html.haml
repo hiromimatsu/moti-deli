@@ -25,3 +25,8 @@
         =link_to "All▼", "/articles"
       .Area__Region__Select
         =link_to "関東▼", "/articles"
+
+.Main
+  .Article
+  - @articles.each do |article|
+    = link_to image_tag(article.image.url, class: "Article__Image"), article_path(article.id), method: :get

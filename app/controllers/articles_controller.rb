@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :move_to_index, expect: :index
+  before_action :move_to_index, expect: [:index, :search]
 
   def index
     @articles = Article.all
@@ -23,11 +23,11 @@ class ArticlesController < ApplicationController
   end
 
   def search
-    @tweets = Tweet.search(params[:keyword])
-    #respond_to do |format|
-      #format.html
-      #format.json
-    #end
+    @articles = Article.search(params[:keyword])
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   private
