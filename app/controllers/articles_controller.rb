@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :move_to_index, expect: [:index, :search]
 
   def index
-    @articles = Article.where(area_id: params[:area_id])
+      @articles = Article.where(area_id: params[:area_id])
   end
 
   def new
