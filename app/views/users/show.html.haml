@@ -7,11 +7,11 @@
   %li.ArticleMenu__Icon
   = link_to root_path do
     = icon('fas','home')
-  %li.ArticleMenu__Ison
-  = link_to edit_article_path(@article.id), method: :get do
+  %li.ArticleMenu__Icon
+  = link_to edit_article_path(@articles.ids), method: :get do
     = icon('fas','edit')
   %li.ArticleMenu__Icon
-  = link_to "/articles/#{@article.id}" , method: :delete do
+  = link_to "/articles/#{@articles.ids}" , method: :delete do
     = icon('fas','trash-alt')
 
 - @articles.each do |article|
