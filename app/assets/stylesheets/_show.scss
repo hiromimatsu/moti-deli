@@ -1,8 +1,18 @@
-.UserName {
-  background-color: royalblue;
-  color: white;
-  width: 100%;
-  font-family: 'Hiragino Maru Gothic ProN';
+.Contents{
+  &__Title {
+    background-color: mediumpurple;
+    color: white;
+    width: 100%;
+    font-family: 'Hiragino Maru Gothic ProN';
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    a {
+      text-decoration: none;
+      color: white;
+      margin-left: 20px;
+    }
+  }
 }
 
 .Restaurant {

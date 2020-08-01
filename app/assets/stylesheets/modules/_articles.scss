@@ -11,6 +11,11 @@
     padding: 10px;
     color: white;
     background-color: mediumpurple;
+    a {
+        text-decoration: none;
+        color: white;
+        margin-left: 20px;
+    }
   }
   .Container {
     display: flex;
@@ -18,6 +23,7 @@
     flex-direction: column;
     font-size: 20px;
     margin-top: 20px;
+    color: gray;
     &__Radio {
       display: inline_flex;
     }
@@ -32,6 +38,7 @@
       width: 50%;
       margin: 20px 0 20px 0;
       padding: 5px;
+      color: gray;
     }
     &__Instagram {
       border-radius: 10px;
@@ -39,6 +46,7 @@
       width: 50%;
       margin-top: 20px;
       padding: 5px;
+      color: gray;
     }
     &__Menu, &__Rule {
       border-radius: 10px;
@@ -47,6 +55,7 @@
       width: 50%;
       margin-top: 20px;
       padding: 5px;
+      color: gray;
     }
     &__Btn {
       border-radius: 10px;

@@ -1,13 +1,11 @@
 .Notification {
   .notice {
-    background-color: lightskyblue;
-    color: black;
     text-align: center;
+    color: blue;
   }
 
   .alert {
-    background-color: lightsalmon;
-    color: black;
+    color: red;
     text-align: center;
   }
 }
