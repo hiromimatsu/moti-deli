@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :move_to_index, expect: [:index, :search]
 
   def index
-      @articles = Article.where(area_id: params[:area_id])
+      @articles = Article.where(area_id: params[:area_id]).includes(:user)
   end
 
   def new
@@ -42,7 +42,7 @@ class ArticlesController < ApplicationController
       redirect_to article_path
     else
       flash[:alert] = "編集に失敗しました"
-      render edit_article_path
+      rendirect_to edit_article_path
     end
   end
 
