@@ -1,41 +1,11 @@
 .Contents
-  .UserName
+  .Contents__Title
     = @name
     さんの投稿一覧
+    =link_to root_path do
+      =icon('fas','home')
 
-%ul.ArticleMenu
-  %li.ArticleMenu__Icon
-  = link_to root_path do
-    = icon('fas','home')
-  %li.ArticleMenu__Ison
-  = link_to edit_article_path(@article.id), method: :get do
-    = icon('fas','edit')
-  %li.ArticleMenu__Icon
-  = link_to "/articles/#{@article.id}" , method: :delete do
-    = icon('fas','trash-alt')
-
-- @articles.each do |article|
-  .Restaurant
-    = article.restaurant
-  .Article2
-    = image_tag article.image.url, class: "Article2__Image2"
-    .Article2__Contents
-      %br
-      .Article2__Contents__Title
-        =icon('fas','shopping-bag')
-        テイクアウト メニュー
-      %br
-      .Article2__Contents__Show
-        = article.menu
-      %br
-      .Article2__Contents__Title
-        =icon('fas','info-circle')
-        利用ルール
-      %br
-      .Article2__Contents__Show
-        = article.rule
-      %br
-      .Article2__Contents__Logo
-      = link_to article.instagram, class:"Article2__Contents__Btn Article2__Contents__Btn--Instagram" do
-        =icon('fab','instagram', class: "Article2__Contents__Btn--Icon")
-        Instagram
+.Main
+  .Article
+    - @articles.each do |article|
+      = link_to image_tag(article.image.url, class: "Article__Image"), article_path(article.id), method: :get

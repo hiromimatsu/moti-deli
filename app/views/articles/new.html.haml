@@ -1,6 +1,9 @@
 .Contents
   .Contents__Title
     新規投稿ページ
+    =link_to root_path do
+      =icon('fas','home')
+
   = form_with model: @article,local: true,class:"Container" do |f|
     = f.label :image, class: 'image' do
       = icon('far','image', class: 'icon')

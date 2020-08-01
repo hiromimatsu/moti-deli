@@ -10,19 +10,23 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.create(article_params)
+    @article = Article.new(article_params)
     if @article.save
+      flash[:notice] = "投稿が完了しました"
       redirect_to root_path
     else
-      render new_article_path
+      flash[:alert] = "入力漏れがあります"
+      redirect_to new_article_path
     end
   end
 
   def destroy
     article = Article.find(params[:id])
     if article.destroy
+      flash[:notice] = "投稿を削除しました"
       redirect_to root_path
     else
+      flash[:alert] = "削除に失敗しました"
       render article_path
     end
   end
@@ -34,8 +38,10 @@ class ArticlesController < ApplicationController
   def update
     article = Article.find(params[:id])
     if article.update(article_params)
+      flash[:notice] = "投稿を編集しました"
       redirect_to article_path
     else
+      flash[:alert] = "編集に失敗しました"
       render edit_article_path
     end
   end
