@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   root "articles#index"
 
   resources :areas, only: :index
-  resources :articles, only: [:index, :new, :create, :show] do
-      collection do
-        get 'search'
-      end
+  resources :articles do
+    collection do
+      get 'search'
+    end
   end
   resources :users, only: :show
   

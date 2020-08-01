@@ -1,0 +1,15 @@
+.Contents
+  .Contents__Title
+    編集ページ
+  = form_with model: @article,local: true,class:"Container" do |f|
+    = f.label :image, class: 'image' do
+      = icon('far','image', class: 'icon')
+      =f.file_field :image, class: 'hidden'
+      <<< 画像を選択
+    = f.text_field :restaurant, class: 'Container__Restaurant', placeholder: "【エリア名】店名"
+    .Constant__Radio
+      = f.collection_radio_buttons :area_id, Area.all, :id, :name
+    = f.text_field :instagram, class: 'Container__Instagram', placeholder: "公式インスタグラム URL"
+    = f.text_area :menu, class: "Container__Menu", placeholder: "テイクアウト メニュー"
+    = f.text_area :rule, class: "Container__Rule", placeholder: "利用ルール"
+    = f.submit "送信", class: "Container__Btn"

@@ -1,5 +1,17 @@
 .Restaurant
   = @article.restaurant
+
+%ul.ArticleMenu
+  %li.ArticleMenu__Icon
+  = link_to root_path do
+    = icon('fas','home')
+  %li.ArticleMenu__Ison
+  = link_to edit_article_path(@article.id), method: :get do
+    = icon('fas','edit')
+  %li.ArticleMenu__Icon
+  = link_to "/articles/#{@article.id}" , method: :delete do
+    = icon('fas','trash-alt')
+
 .Article2
   = image_tag @article.image.url, class: "Article2__Image2"
   .Article2__Contents
