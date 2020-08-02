@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
+  database: moti_deli_production
+  username: moti_deli
+  password: <%= ENV['moti_deli_DATABASE_PASSWORD'] %>
