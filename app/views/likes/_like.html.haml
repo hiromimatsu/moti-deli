@@ -1,0 +1,6 @@
+- if Like.find_by(user_id: current_user.id, article_id: @article.id)
+  = link_to "/articles/#{@article.id}/likes/#{@article.likes.ids}", method: :delete, class:"element", remote: true do
+    = icon('far', 'heart', class: "like")
+- else
+  = link_to "/articles/#{@article.id}/likes", method: :post, class:"element", remote: true do
+    = icon('fas', 'heart', class: "unlike")
