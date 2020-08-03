@@ -13,9 +13,12 @@
       = link_to "/articles/#{@article.id}" , method: :delete do
         = icon('fas','trash-alt')
 
-
 .Article2
-  = image_tag @article.image.url, class: "Article2__Image2"
+  .Article2__Img
+    = image_tag @article.image.url, class: "Article2__Img__Image2"
+    #like{ id: @article.id }
+      = render "likes/like"
+  
   .Article2__Contents
     .Article2__Contents__Title
       =icon('fas','shopping-bag')

@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
 
   def after_destroy_user_session_path_for(resource)
     flash[:notice] = "ログアウトしました"
-    root_path
+    redirect_to root_path
   end
 end

@@ -44,10 +44,19 @@ ul {
   margin-top: 40px;
   font-family: 'Hiragino Maru Gothic ProN';
   color: gray;
-  &__Image2 {
-    height: 300px;
-    width: 300px;
-    border-radius: 20px;
+  &__Img {
+    position: relative;
+    display: flex;
+    &__Image2 {
+      height: 300px;
+      width: 300px;
+      border-radius: 20px;
+    }
+    .element {
+      position: absolute;
+      top: 75%;
+      left: 75%;
+    }
   }
   &__Contents {
     margin-left: 30px;

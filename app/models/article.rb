@@ -1,6 +1,7 @@
 class Article < ApplicationRecord
   belongs_to :user
   belongs_to :area
+  has_many :likes
 
   mount_uploader :image, ImageUploader
 
