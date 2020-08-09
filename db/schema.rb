@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_02_112404) do
+ActiveRecord::Schema.define(version: 2020_08_09_122538) do
 
   create_table "area_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "area_id"
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 2020_08_02_112404) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "article_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "article_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["article_id"], name: "index_article_categories_on_article_id"
+    t.index ["category_id"], name: "index_article_categories_on_category_id"
+  end
+
   create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "restaurant", null: false
     t.string "image", null: false
@@ -41,6 +50,15 @@ ActiveRecord::Schema.define(version: 2020_08_02_112404) do
     t.index ["menu"], name: "index_articles_on_menu", length: 32
     t.index ["restaurant"], name: "index_articles_on_restaurant"
     t.index ["user_id"], name: "index_articles_on_user_id"
+  end
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "ancestry"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+    t.index ["name"], name: "index_categories_on_name"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

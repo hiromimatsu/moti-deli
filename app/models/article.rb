@@ -2,6 +2,8 @@ class Article < ApplicationRecord
   belongs_to :user
   belongs_to :area
   has_many :likes
+  has_many :article_categories, dependet: :destory
+  has_many :categories, through: :article_categories
 
   mount_uploader :image, ImageUploader
 
