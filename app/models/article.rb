@@ -1,6 +1,5 @@
 class Article < ApplicationRecord
   belongs_to :user
-  belongs_to :area
   has_many :likes
   belongs_to :category
 

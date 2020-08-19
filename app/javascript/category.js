@@ -1,16 +1,16 @@
 $(function(){
   // カテゴリーセレクトボックスのオプションを作成
   function appendOption(category){
-    var html = `<option value="${category.name}" data-category="${category.id}">${category.name}</option>`;
+    var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
     return html;
   }
   // 子カテゴリーの表示作成
   function appendChildrenBox(insertHTML){
     var childSelectHtml = '';
     childSelectHtml = 
-        `<div class='categoryWrapper__add' id= 'children_wrapper'>
+        `<div class='categoryWrapper' id= 'children_wrapper'>
           <div class='categoryWrapper__box'>
-            <select class="categoryWrapper__box--select" id="child_category" name="category_id">
+            <select class='categoryWrapper__box--select' id="child_category" name="article[category_id]">
               <option value="---" data-category="---">---</option>
               ${insertHTML}
             </select>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_09_122538) do
+ActiveRecord::Schema.define(version: 2020_08_19_140827) do
 
   create_table "areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -24,11 +24,11 @@ ActiveRecord::Schema.define(version: 2020_08_09_122538) do
     t.string "instagram", null: false
     t.text "menu", null: false
     t.text "rule", null: false
-    t.bigint "area_id"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["area_id"], name: "index_articles_on_area_id"
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_articles_on_category_id"
     t.index ["restaurant"], name: "index_articles_on_restaurant"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2020_08_09_122538) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "articles", "areas"
+  add_foreign_key "articles", "categories"
   add_foreign_key "articles", "users"
   add_foreign_key "likes", "articles"
   add_foreign_key "likes", "users"

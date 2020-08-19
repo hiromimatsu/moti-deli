@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :move_to_index, expect: [:index, :search]
 
   def index
-      @articles = Article.where(area_id: params[:area_id]).includes(:user)
+      @articles = Article.all
   end
 
   def new
@@ -69,7 +69,7 @@ class ArticlesController < ApplicationController
 
   private
   def article_params
-    params.require(:article).permit(:restaurant, :image, :instagram, :menu, :rule, :area_id).merge(user_id: current_user.id)
+    params.require(:article).permit(:restaurant, :image, :instagram, :menu, :rule, :category_id).merge(user_id: current_user.id)
   end
 
   def move_to_index
