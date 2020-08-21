@@ -21,6 +21,7 @@
 .formContents {
   display: flex;
   justify-content: center;
+  height: 900px;
 }
 
 h2 {
@@ -44,9 +45,9 @@ span.requireBox {
 }
 
 .image {
-  width: 200px;
-  height: 200px;
-  background-color: lightgray;
+  font-size: 150px;
+  color: lightgray;
+  margin-left: 120px;
   .hidden {
     display: none;
   }

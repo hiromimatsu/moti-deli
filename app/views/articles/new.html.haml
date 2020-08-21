@@ -7,8 +7,9 @@
   = form_with model: @article,local: true do |f|
     .newArticles
       %h2.newArticles__image
-        = f.label :image, class: 'image'
-        =f.file_field :image, class: 'hidden'
+        = f.label :image, class: 'image' do
+          = icon('far','image', class: 'icon')
+          =f.file_field :image, class: 'hidden'
       %h2.newArticles__restaurant
         .newArticles__restaurant--title
         = f.label :店名

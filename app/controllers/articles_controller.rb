@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :move_to_index, expect: [:index, :search]
+  # before_action :set_item, except: [:]
 
   def index
       @articles = Article.all
@@ -42,6 +43,18 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+
+    child_category = @article.category
+
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+
+    @category_children = []
+    Category.where(ancestry: child_category.ancestry).each do |children|
+      @category_children << children
+    end
   end
 
   def update
@@ -77,4 +90,8 @@ class ArticlesController < ApplicationController
       redirect_to action: :index
     end
   end
+
+  # def set_item
+  #   @article = Article.find(params[:id])
+  # end
 end
