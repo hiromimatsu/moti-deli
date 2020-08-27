@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-.newTitle {
+.Contents {
   text-align: center;
   color: gray;
   font-size: 30px;
@@ -54,6 +54,11 @@ span.requireBox {
 }
 
 .categoryWrapper__box--select {
+  width:400px;
+  height: 30px;
+}
+
+.categoryWrapperEdit__box--select {
   width:400px;
   height: 30px;
 }
