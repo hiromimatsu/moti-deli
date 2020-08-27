@@ -10,31 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_09_122538) do
-
-  create_table "area_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "area_id"
-    t.bigint "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["area_id"], name: "index_area_users_on_area_id"
-    t.index ["user_id"], name: "index_area_users_on_user_id"
-  end
-
-  create_table "areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "article_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "article_id", null: false
-    t.bigint "category_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["article_id"], name: "index_article_categories_on_article_id"
-    t.index ["category_id"], name: "index_article_categories_on_category_id"
-  end
+ActiveRecord::Schema.define(version: 2020_08_19_140827) do
 
   create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "restaurant", null: false
@@ -42,12 +18,11 @@ ActiveRecord::Schema.define(version: 2020_08_09_122538) do
     t.string "instagram", null: false
     t.text "menu", null: false
     t.text "rule", null: false
-    t.bigint "area_id"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["area_id"], name: "index_articles_on_area_id"
-    t.index ["menu"], name: "index_articles_on_menu", length: 32
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_articles_on_category_id"
     t.index ["restaurant"], name: "index_articles_on_restaurant"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
@@ -84,9 +59,7 @@ ActiveRecord::Schema.define(version: 2020_08_09_122538) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "area_users", "areas"
-  add_foreign_key "area_users", "users"
-  add_foreign_key "articles", "areas"
+  add_foreign_key "articles", "categories"
   add_foreign_key "articles", "users"
   add_foreign_key "likes", "articles"
   add_foreign_key "likes", "users"

@@ -2,9 +2,18 @@
   height: calc(100vh - 100px);
   overflow: scroll;
   .Article {
-    margin-top: 10px;
+    // position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    width: 800px;
+    &__list {
+      margin-top: 20px;
+    }
     &__Image {
-      height: 270px;
+      // position: absolute;
+      height: 240px;
       border-radius: 10px;
       margin-left: 10px;
     }

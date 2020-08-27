@@ -7,7 +7,6 @@ class CreateArticles < ActiveRecord::Migration[6.0]
       t.string :instagram, null: false
       t.text :menu, null: false
       t.text :rule, null: false
-      t.references :area, foreign_key: true
       t.references :user, foreign_key: true
       t.timestamps
     end

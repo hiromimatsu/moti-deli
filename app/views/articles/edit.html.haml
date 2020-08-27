@@ -4,15 +4,52 @@
     .Contentes__Title__Icon
     =link_to root_path do
       =icon('fas','home')
+
+.formContents
   = form_with model: @article,local: true,class:"Container" do |f|
-    = f.label :image, class: 'image' do
-      = icon('far','image', class: 'icon')
-      =f.file_field :image, class: 'hidden'
-      <<< 画像を選択
-    = f.text_field :restaurant, class: 'Container__Restaurant', placeholder: "【エリア名】店名"
-    .Constant__Radio
-      = f.collection_radio_buttons :area_id, Area.all, :id, :name
-    = f.text_field :instagram, class: 'Container__Instagram', placeholder: "公式インスタグラム URL"
-    = f.text_area :menu, class: "Container__Menu", placeholder: "テイクアウト メニュー"
-    = f.text_area :rule, class: "Container__Rule", placeholder: "利用ルール"
-    = f.submit "送信", class: "Container__Btn"
+    .newArticles
+      %h2.newArticles__image
+        = f.label :image, class: 'image' do
+          = icon('far','image', class: 'icon')
+          =f.file_field :image, class: 'hidden'
+      %h2.newArticles__restaurant
+        .newArticles__restaurant--title
+        = f.label :店名
+        %span.requireBox
+          必須
+        .newArticles__restaurant--form
+          = f.text_field :restaurant, class: 'restaurant'
+      %h2.newArticles__category
+        .newArticles__category--title
+          = f.label :カテゴリー
+          %span.requireBox
+            必須
+          .categoryWrapperEdit
+            .categoryWrapperEdit__box
+              = f.collection_select :category_id, Category.roots, :id, :name,{prompt: '---', selected: @article.category.parent_id}, {class: 'categoryWrapperEdit__box--select',  id: 'parent_category_edit'}
+            .categoryWrapperEdit__box
+              = f.collection_select :category_id, @article.category.parent.children, :id, :name ,{prompt: "選択してください", selected: @article.category.id}, {class: 'categoryWrapperEdit__box--select',  id: 'child_category_edit', name: "article[category_id]" }
+              
+      %h2.newArticles__instagram
+        .newArticles__instagram--title
+        = f.label :公式インスタグラムURL
+        %span.requireBox
+          必須
+        .newArticles__instagram--form
+          = f.text_field :instagram, class: 'instagram'
+      %h2.newArticles__menu
+        .newArticles__menu--title
+        = f.label :テイクアウトメニュー
+        %span.requireBox
+          必須
+        .newArticles__menu--form
+          = f.text_area :menu, class: "menu"
+      %h2.newArticles__rule
+        .newArticles__rule--title
+        = f.label :利用ルール
+        %span.requireBox
+          必須
+        .newArticles__rule--form
+          = f.text_area :rule, class: "rule"
+      %h2.newArticles__btn
+        = f.submit "送信", class: "submit-btn"

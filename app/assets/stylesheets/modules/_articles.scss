@@ -7,63 +7,73 @@
   color: gray;
   font-size: 30px;
   font-family: 'Hiragino Maru Gothic ProN';
-  &__Title {
-    padding: 10px;
+  padding: 10px;
+  color: white;
+  background-color: orange;
+
+  a {
+    text-decoration: none;
     color: white;
-    background-color: orange;
-    a {
-        text-decoration: none;
-        color: white;
-        margin-left: 20px;
-    }
+    margin-left: 20px;
   }
-  .Container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    font-size: 20px;
-    margin-top: 20px;
-    color: gray;
-    &__Radio {
-      display: inline_flex;
-    }
-    .image {
-      .hidden {
-        display: none;
-      }
-    }
-    &__Restaurant {
-      border-radius: 10px;
-      border: 2px solid gray;
-      width: 50%;
-      margin: 20px 0 20px 0;
-      padding: 5px;
-      color: gray;
-    }
-    &__Instagram {
-      border-radius: 10px;
-      border: 2px solid gray;
-      width: 50%;
-      margin-top: 20px;
-      padding: 5px;
-      color: gray;
-    }
-    &__Menu, &__Rule {
-      border-radius: 10px;
-      border: 2px solid gray;
-      height: 100px;
-      width: 50%;
-      margin-top: 20px;
-      padding: 5px;
-      color: gray;
-    }
-    &__Btn {
-      border-radius: 10px;
-      border: 2px solid gray;
-      width: 50%;
-      margin-top: 20px;
-      background-color: orange;
-      color: white;
-    }
+}
+
+.formContents {
+  display: flex;
+  justify-content: center;
+  height: 900px;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+span.requireBox {
+  background-color: red;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.restaurant, .instagram {
+  width: 400px;
+}
+
+.menu, .rule {
+  width: 400px;
+  height: 100px;
+}
+
+.image {
+  font-size: 150px;
+  color: lightgray;
+  margin-left: 120px;
+  .hidden {
+    display: none;
   }
+}
+
+.categoryWrapper__box--select {
+  width:400px;
+  height: 30px;
+}
+
+.categoryWrapperEdit__box--select {
+  width:400px;
+  height: 30px;
+}
+
+.newArticles__btn {
+  text-align: center;
+}
+
+.submit-btn {
+  width: 300px;
+  background-color: orange;
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  padding: 5px;
 }
