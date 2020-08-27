@@ -16,20 +16,20 @@
 ### **https://moti-deli.herokuapp.com**
 
 ## 機能一覧
-・ユーザー登録、ログイン機能
-・記事投稿機能
-・多階層カテゴリー（ancestry）
-・記事検索機能
+- ユーザー登録、ログイン機能
+- 記事投稿機能
+- 多階層カテゴリー（ancestry）
+- 記事検索機能
 
 ## Basic認証
-ユーザー: motideri
-パスワード: moti0123
+- ユーザー: motideri
+- パスワード: moti0123
 
 ## 開発環境
-言語: Ruby
-ツール: Ruby on Rails
-DB: mySQL
-サーバー: heroku
+- 言語: Ruby
+- ツール: Ruby on Rails
+- DB: mySQL
+- サーバー: heroku
 
 
 # DB設計
