@@ -1,7 +1,9 @@
-.newTitle
-  新規投稿ページ
-  =link_to root_path do
-    =icon('fas','home')
+.Contents
+  .Contents__Title
+    新規投稿ページ
+    .Contentes__Title__Icon
+    =link_to root_path do
+      =icon('fas','home')
 
 .formContents
   = form_with model: @article,local: true do |f|
@@ -24,7 +26,7 @@
             必須
           .categoryWrapper
             .categoryWrapper__box
-              = f.select :category, @category_parent_array, {}, {class: 'categoryWrapper__box--select', id: 'parent_category'}
+              = f.collection_select(:category_id, @category_parent_array, :id, :name, {prompt: "---"}, {class: 'categoryWrapper__box--select', id: 'parent_category'})
       %h2.newArticles__instagram
         .newArticles__instagram--title
         = f.label :公式インスタグラムURL

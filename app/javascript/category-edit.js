@@ -11,9 +11,9 @@ document.addEventListener("turbolinks:load"
     function appendChildrenBox(insertHTML){
       var childSelectHtml = '';
       childSelectHtml = 
-          `<div class='categoryWrapper' id= 'children_wrapper'>
-            <div class='categoryWrapper__box'>
-              <select class='categoryWrapper__box--select' id="child_category" name="article[category_id]">
+          `<div class='categoryWrapperEdit' id= 'children_wrapper_edit'>
+            <div class='categoryWrapperEdit__box'>
+              <select class='categoryWrapperEdit__box--select' id="child_category_edit" name="article[category_id]">
                 <option value="---" data-category="---">---</option>
                 ${insertHTML}
               </select>
@@ -22,17 +22,17 @@ document.addEventListener("turbolinks:load"
       $('.newArticles__category--title').append(childSelectHtml);
     }
     // 親カテゴリー選択後のイベント
-    $('#parent_category').on('change', function(){
-      var parentCategory = document.getElementById('parent_category').value;
-      if (parentCategory != "---"){
+    $('#parent_category_edit').on('change', function(){
+      var parentCategoryEdit = document.getElementById('parent_category_edit').value; //選択された親カテゴリーの名前を取得
+      if (parentCategoryEdit != "---"){ //親カテゴリーが初期値でないことを確認
         $.ajax({
           url: 'get_category_children',
           type: 'GET',
-          data: { parent_id: parentCategory },
+          data: { parent_id: parentCategoryEdit },
           dataType: 'json'
         })
         .done(function(children){
-          $('#child_category').remove();
+          $('#child_category_edit').remove(); //親が変更された時、子以下を削除する
           var insertHTML = '';
           children.forEach(function(child){
             insertHTML += appendOption(child);
@@ -43,7 +43,7 @@ document.addEventListener("turbolinks:load"
           alert('カテゴリー取得に失敗しました');
         })
       }else{
-        $('#child_category').remove(); //親カテゴリーが初期値になった時、子以下を削除する
+        $('#child_category_edit').remove(); //親カテゴリーが初期値になった時、子以下を削除する
       }
     });
   });

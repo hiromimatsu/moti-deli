@@ -9,7 +9,7 @@ kanto_tochigi = kanto.children.create(name: "栃木")
 kanto_gunma = kanto.children.create(name: "群馬")
 
 
-kinki = Category.create(name: "近畿")
+kinki = Category.create(name: "関西")
 
 kinki_osaka = kinki.children.create(name: "大阪")
 kinki_hyogo = kinki.children.create(name: "兵庫")
@@ -19,12 +19,9 @@ kinki_wakayama = kinki.children.create(name: "和歌山")
 kinki_siga = kinki.children.create(name: "滋賀")
 kinki_mie = kinki.children.create(name: "三重")
 
+touhoku = Category.create(name: "北海道・東北")
 
-hokkaido = Category.create(name: "北海道")
-
-
-touhoku = Category.create(name: "東北")
-
+touhoku_hokkaido = touhoku.children.create(name: "北海道")
 touhoku_aomori = touhoku.children.create(name: "青森")
 touhoku_iwate = touhoku.children.create(name: "岩手")
 touhoku_miyagi = touhoku.children.create(name: "宮城")
@@ -50,9 +47,9 @@ tyugoku = Category.create(name: "中国")
 
 tyugoku_totori = tyugoku.children.create(name: "鳥取")
 tyugoku_shimane = tyugoku.children.create(name: "島根")
-tyubu_okayama = tyubu.children.create(name: "岡山")
-tyubu_hiroshima = tyubu.children.create(name: "広島")
-tyubu_yamaguchi = tyubu.children.create(name: "山口")
+tyugoku_okayama = tyugoku.children.create(name: "岡山")
+tyugobu_hiroshima = tyugoku.children.create(name: "広島")
+tyugoku_yamaguchi = tyugoku.children.create(name: "山口")
 
 
 shikoku = Category.create(name: "四国")
@@ -63,7 +60,7 @@ shikoku_ehime = shikoku.children.create(name: "愛媛")
 shikoku_kouchi = shikoku.children.create(name: "高知")
 
 
-kyushu = Category.create(name: "九州")
+kyushu = Category.create(name: "九州・沖縄")
  
 kyushu_hukuoka = kyushu.children.create(name: "福岡")
 kyushu_saga = kyushu.children.create(name: "佐賀")
@@ -72,6 +69,4 @@ kyushu_kumamoto = kyushu.children.create(name: "熊本")
 kyushu_oita = kyushu.children.create(name: "大分")
 kyushu_miyazaki = kyushu.children.create(name: "宮崎")
 kyushu_kagoshima = kyushu.children.create(name: "鹿児島")
-
-
-okinawa = Category.create(name: "沖縄")
+kyushu_okinawa = kyushu.children.create(name: "沖縄")

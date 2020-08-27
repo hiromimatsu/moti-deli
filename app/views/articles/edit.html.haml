@@ -24,11 +24,12 @@
           = f.label :カテゴリー
           %span.requireBox
             必須
-          .categoryWrapper
-            .categoryWrapper__box
-              = f.select :parent_name, @category_parent_array, {selected: @article.category.parent.name}, { class: 'categoryWrapper__box--select', id: 'parent_category'}
-            .categoryWrapper__box  
-              = f.select :category_id, options_for_select(@category_children.map{|b| [b.name, b.id, {date:{category: b.id}}]},{prompt: "指定なし", selected: @article.category.parent.id}),{},{class: 'categoryWrapper__box--select', id: 'child_category'}
+          .categoryWrapperEdit
+            .categoryWrapperEdit__box
+              = f.collection_select :category_id, Category.roots, :id, :name,{prompt: '---', selected: @article.category.parent_id}, {class: 'categoryWrapperEdit__box--select',  id: 'parent_category_edit'}
+            .categoryWrapperEdit__box
+              = f.collection_select :category_id, @article.category.parent.children, :id, :name ,{prompt: "選択してください", selected: @article.category.id}, {class: 'categoryWrapperEdit__box--select',  id: 'child_category_edit', name: "article[category_id]" }
+              
       %h2.newArticles__instagram
         .newArticles__instagram--title
         = f.label :公式インスタグラムURL

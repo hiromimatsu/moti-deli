@@ -12,11 +12,14 @@
       - if user_signed_in?
         .Top__UserNav__Btn
           =link_to "投稿", new_article_path, class: "Top__UserNav__Btn--Post"
+        .Top__UserNav__Btn
           =link_to "マイページ", "/users/#{current_user.id}", class: "Top__UserNav__Btn--Post"
+        .Top__UserNav__Btn
           =link_to "ログアウト", destroy_user_session_path, class: "Top__UserNav__Btn--Post", method: :delete
       - else
         .Top__UserNav__Btn
           =link_to "ログイン", new_user_session_path, class: "Top__UserNav__Btn--Post"
+        .Top__UserNav__Btn
           =link_to "新規登録", new_user_registration_path, class: "Top__UserNav__Btn--Post"
     
   .Area
@@ -50,5 +53,6 @@
 
 .Main
   .Article
-  - @articles.each do |article|
-    = link_to image_tag(article.image.url, class: "Article__Image"), article_path(article.id), method: :get
+    .Article__list
+    - @articles.each do |article|
+      = link_to image_tag(article.image.url, class: "Article__Image"), article_path(article.id), method: :get

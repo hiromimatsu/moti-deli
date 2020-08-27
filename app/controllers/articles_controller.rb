@@ -9,14 +9,14 @@ class ArticlesController < ApplicationController
   def new
     @article = Article.new
     
-    @category_parent_array = ["---"]
+    @category_parent_array = []
     Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
+      @category_parent_array << parent
     end
   end
 
   def get_category_children
-    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+    @category_children = Category.find_by(id: "#{params[:parent_id]}", ancestry: nil).children
   end
 
   def create
@@ -43,18 +43,6 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
-
-    child_category = @article.category
-
-    @category_parent_array = []
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
-    end
-
-    @category_children = []
-    Category.where(ancestry: child_category.ancestry).each do |children|
-      @category_children << children
-    end
   end
 
   def update

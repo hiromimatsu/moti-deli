@@ -9,6 +9,9 @@ Rails.application.routes.draw do
       get 'search'
       get 'get_category_children', defaults: { format: 'json' }
     end
+    member do 
+      get 'get_category_children', defaults: { format: 'json' }
+    end
   end
   resources :users, only: :show
 end
