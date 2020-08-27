@@ -2,4 +2,4 @@
   .Article
     .Article__list
     - @articles.each do |article|
-      = link_to image_tag(article.image.url, class: "Article__Image"), article_path(article.id), method: :get
+      = link_to image_tag(article.image.url, class: "main-image"), article_path(article.id), method: :get

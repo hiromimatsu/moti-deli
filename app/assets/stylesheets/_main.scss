@@ -1,21 +1,23 @@
 .Main {
   height: calc(100vh - 100px);
   overflow: scroll;
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: center;
   .Article {
-    // position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    top: 20px;
     text-align: left;
-    width: 800px;
+    width: 770px;
     &__list {
-      margin-top: 20px;
-    }
-    &__Image {
-      // position: absolute;
-      height: 240px;
-      border-radius: 10px;
-      margin-left: 10px;
     }
   }
+}
+
+.main-image {
+  // position: absolute;
+  height: 240px;
+  border-radius: 10px;
+  margin-left: 5px;
 }
