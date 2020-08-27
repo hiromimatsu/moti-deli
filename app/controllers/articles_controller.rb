@@ -3,8 +3,15 @@ class ArticlesController < ApplicationController
   # before_action :set_item, except: [:]
 
   def index
-      @articles = Article.all
+    @articles = Article.all
+    @parents = Category.all.order("id ASC").limit(7)
   end
+
+  # def item_table
+  #   @articles = Article.where(category_id: params[:category_id]).includes(:user)
+  # end
+
+
 
   def new
     @article = Article.new

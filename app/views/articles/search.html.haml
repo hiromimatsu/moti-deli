@@ -21,14 +21,14 @@
           =link_to "ログイン", new_user_session_path, class: "Top__UserNav__Btn--Post"
         .Top__UserNav__Btn
           =link_to "新規登録", new_user_registration_path, class: "Top__UserNav__Btn--Post"
-    
+  
   .Area
     .Area__Region
       .Area__Region__Select
         =link_to "All▼","/articles/search"
 
       .Area__Region__Select
-        =link_to "関東▼", controller: "articles", action: "index", area_id: 1
+        =link_to "関東▼", "#"
 
       .Area__Region__Select
         =link_to "関西▼", controller: "articles", action: "index", area_id: 2
