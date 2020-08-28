@@ -1,49 +1,57 @@
+// ユーザー新規登録、ログイン
+
 .AccountPage {
-  width: 980px;
-  margin: 60px auto;
-  padding: 60px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  width: 600px;
+  margin: 40px auto;
+  padding: 30px 60px;
+  background-color: orange;
   border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
+  text-align: center;
+  // display: flex;
+  // justify-content: space-between;
 }
+
 .AccountPage__title {
-  width: 50%;
-  font-size: 14px;
-  font-weight: 200;
-
-  h2 {
-    margin-bottom: 10px;
-    letter-spacing: 3px;
-    font-size: 40px;
-    &:after {
-      content: "";
-      display: block;
-      width: 60px;
-      margin-top: 5px;
-      border-bottom: 1px solid orange;
-    }
-  }
-
-  .Button {
-    margin-top: 40px;
-    color: #fff;
-    background-color: #ccc;
-  }
+  font-size: 40px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  color: white;
 }
 
-.AccountPage__form {
-  width: 50%;
-}
+//   h2 {
+//     margin-bottom: 10px;
+//     letter-spacing: 3px;
+//     font-size: 40px;
+//     &:after {
+//       content: "";
+//       display: block;
+//       width: 60px;
+//       margin-top: 5px;
+//       border-bottom: 1px solid orange;
+//     }
+//   }
+
+//   .Button {
+//     margin-top: 40px;
+//     color: #fff;
+//     background-color: #ccc;
+//   }
+// }
+
+// .AccountPage__form {
+//   width: 50%;
+// }
 
 .FormField {
   margin-bottom: 10px;
+  color: white;
   &__label--normal {
     padding: 10px 0;
     letter-spacing: 1px;
     font-size: 14px;
     font-weight: 200;
+    text-align: left;
+    margin-left: 40px;
     i {
       font-size: 11px;
     }
@@ -56,23 +64,9 @@
   &__input--normal {
     input {
       box-sizing: border-box;
-      width: 100%;
+      width: 400px;
       padding: 10px;
       letter-spacing: 1px;
-    }
-    .field_with_errors {
-      position: relative;
-
-      &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 5px;
-        background-color: #d65f4c;
-      }
     }
   }
 }
@@ -87,35 +81,12 @@
   border: none;
   border-radius: 2px;
   text-decoration: none;
+  margin: 10px;
 }
 
-.UserButton {
-  margin-top: 20px;
-  color: #fff;
-  background-color: orange;
-}
-
-#error_explanation {
-  margin: 20px 0;
-  padding: 20px 30px;
-  border: 1px solid #ddd;
-  border-radius: 2px;
-
-  h2 {
-    margin-bottom: 10px;
-    color: #d65f4c;
-    font-size: 14px;
-  }
-
-  ul {
-    margin: 0;
-    padding-left: 17px;
-    list-style: square;
-  }
-
-  li {
-    margin: 0;
-    padding: 0;
-    font-size: 13px;
+.acount-redirect {
+  color: white;
+  a {
+    color: white;
   }
 }
