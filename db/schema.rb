@@ -10,30 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_140827) do
+ActiveRecord::Schema.define(version: 2020_08_02_112404) do
 
   create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "restaurant", null: false
     t.string "image", null: false
-    t.string "instagram", null: false
     t.text "menu", null: false
     t.text "rule", null: false
+    t.integer "area_id", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "category_id", null: false
-    t.index ["category_id"], name: "index_articles_on_category_id"
     t.index ["restaurant"], name: "index_articles_on_restaurant"
     t.index ["user_id"], name: "index_articles_on_user_id"
-  end
-
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "ancestry"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["ancestry"], name: "index_categories_on_ancestry"
-    t.index ["name"], name: "index_categories_on_name"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -59,7 +48,6 @@ ActiveRecord::Schema.define(version: 2020_08_19_140827) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "articles", "categories"
   add_foreign_key "articles", "users"
   add_foreign_key "likes", "articles"
   add_foreign_key "likes", "users"

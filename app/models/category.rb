@@ -1,4 +1,5 @@
-class Category < ApplicationRecord
-  has_ancestry
-  has_many :articles
-end
+# class Category < ApplicationRecord
+#   # has_ancestry
+#   has_many :articles
+# end
+

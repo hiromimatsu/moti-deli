@@ -4,29 +4,21 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
-    # @article = Article.find(params[:id])
-
-    @category_parent_array = Category.where(ancestry: nil)
+    # @articles = Article.where(area_id: params[:area_id]).includes(:user)
   end
-
-  # def set_category_list
-  #   @category_parent_array = Category.where(ancestry: nil)
-  # end
-
-
 
   def new
     @article = Article.new
     
-    @category_parent_array = []
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent
-    end
+    # @category_parent_array = []
+    # Category.where(ancestry: nil).each do |parent|
+    #   @category_parent_array << parent
+    # end
   end
 
-  def get_category_children
-    @category_children = Category.find_by(id: "#{params[:parent_id]}", ancestry: nil).children
-  end
+  # def get_category_children
+  #   @category_children = Category.find_by(id: "#{params[:parent_id]}", ancestry: nil).children
+  # end
 
   def create
     @article = Article.new(article_params)
@@ -79,7 +71,7 @@ class ArticlesController < ApplicationController
 
   private
   def article_params
-    params.require(:article).permit(:restaurant, :image, :instagram, :menu, :rule, :category_id).merge(user_id: current_user.id)
+    params.require(:article).permit(:restaurant, :image, :menu, :rule, :area_id).merge(user_id: current_user.id)
   end
 
   def move_to_index
