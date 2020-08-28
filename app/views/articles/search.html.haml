@@ -21,14 +21,18 @@
           =link_to "ログイン", new_user_session_path, class: "Top__UserNav__Btn--Post"
         .Top__UserNav__Btn
           =link_to "新規登録", new_user_registration_path, class: "Top__UserNav__Btn--Post"
-    
+  
   .Area
     .Area__Region
+    - @category_parent_array.each do |parent|
+      .TopHeader__Inner__Lists__Left__Category__ParentCategories__List{data: {id: "#{parent.id}"}}
+        = link_to "#{parent.name}",select_category_index_item_path(parent.id), class: "parent_category",id: "#{parent.id}"
+
       .Area__Region__Select
         =link_to "All▼","/articles/search"
 
       .Area__Region__Select
-        =link_to "関東▼", controller: "articles", action: "index", area_id: 1
+        =link_to "関東▼", "#"
 
       .Area__Region__Select
         =link_to "関西▼", controller: "articles", action: "index", area_id: 2
@@ -55,4 +59,4 @@
   .Article
     .Article__list
     - @articles.each do |article|
-      = link_to image_tag(article.image.url, class: "Article__Image"), article_path(article.id), method: :get
+      = link_to image_tag(article.image.url, class: "main-image"), article_path(article.id), method: :get

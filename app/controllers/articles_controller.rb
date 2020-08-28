@@ -3,8 +3,17 @@ class ArticlesController < ApplicationController
   # before_action :set_item, except: [:]
 
   def index
-      @articles = Article.all
+    @articles = Article.all
+    # @article = Article.find(params[:id])
+
+    @category_parent_array = Category.where(ancestry: nil)
   end
+
+  # def set_category_list
+  #   @category_parent_array = Category.where(ancestry: nil)
+  # end
+
+
 
   def new
     @article = Article.new
