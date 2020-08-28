@@ -24,6 +24,10 @@
   
   .Area
     .Area__Region
+    - @category_parent_array.each do |parent|
+      .TopHeader__Inner__Lists__Left__Category__ParentCategories__List{data: {id: "#{parent.id}"}}
+        = link_to "#{parent.name}",select_category_index_item_path(parent.id), class: "parent_category",id: "#{parent.id}"
+
       .Area__Region__Select
         =link_to "All▼","/articles/search"
 

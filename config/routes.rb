@@ -8,8 +8,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
       get 'get_category_children', defaults: { format: 'json' }
-      get 'set_categories'
-      get 'item_teble'
+      get 'set_category_list'
     end
     member do 
       get 'get_category_children', defaults: { format: 'json' }

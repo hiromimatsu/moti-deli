@@ -4,11 +4,13 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
-    @parents = Category.all.order("id ASC").limit(7)
+    # @article = Article.find(params[:id])
+
+    @category_parent_array = Category.where(ancestry: nil)
   end
 
-  # def item_table
-  #   @articles = Article.where(category_id: params[:category_id]).includes(:user)
+  # def set_category_list
+  #   @category_parent_array = Category.where(ancestry: nil)
   # end
 
 
