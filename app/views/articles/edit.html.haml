@@ -28,8 +28,11 @@
             .categoryWrapper__box
               .areaChoice
                 =f.collection_select(:area_id, Area.all, :id, :name, {include_blank: "選択してください"}, {class: "categoryWrapper__box--select"})
+            // ancestry使用する場合。
+            // 親選択
             -#   = f.collection_select :category_id, Category.roots, :id, :name,{prompt: '---', selected: @article.category.parent_id}, {class: 'categoryWrapperEdit__box--select',  id: 'parent_category_edit'}
             -# .categoryWrapperEdit__box
+            // 子選択
             -#   = f.collection_select :category_id, @article.category.parent.children, :id, :name ,{prompt: "選択してください", selected: @article.category.id}, {class: 'categoryWrapperEdit__box--select',  id: 'child_category_edit', name: "article[category_id]" }
       %h2.newArticles__menu
         .newArticles__menu--title

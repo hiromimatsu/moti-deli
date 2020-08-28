@@ -1,5 +1,4 @@
 // ユーザー新規登録、ログイン
-
 .AccountPage {
   width: 600px;
   margin: 40px auto;
@@ -7,8 +6,6 @@
   background-color: orange;
   border-radius: 5px;
   text-align: center;
-  // display: flex;
-  // justify-content: space-between;
 }
 
 .AccountPage__title {
@@ -17,30 +14,6 @@
   margin-bottom: 10px;
   color: white;
 }
-
-//   h2 {
-//     margin-bottom: 10px;
-//     letter-spacing: 3px;
-//     font-size: 40px;
-//     &:after {
-//       content: "";
-//       display: block;
-//       width: 60px;
-//       margin-top: 5px;
-//       border-bottom: 1px solid orange;
-//     }
-//   }
-
-//   .Button {
-//     margin-top: 40px;
-//     color: #fff;
-//     background-color: #ccc;
-//   }
-// }
-
-// .AccountPage__form {
-//   width: 50%;
-// }
 
 .FormField {
   margin-bottom: 10px;

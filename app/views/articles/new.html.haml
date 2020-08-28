@@ -18,7 +18,7 @@
         %span.requireBox
           必須
         .newArticles__restaurant--form
-          = f.text_field :restaurant, class: 'restaurant'
+          = f.text_field :restaurant, placeholder: "例: ハワイアンカフェ", class: 'restaurant'
       %h2.newArticles__category
         .newArticles__category--title
           = f.label :大阪環状線最寄駅
@@ -28,6 +28,7 @@
             .categoryWrapper__box
               .areaChoice
                 =f.collection_select(:area_id, Area.all, :id, :name, {include_blank: "選択してください"}, {class: "categoryWrapper__box--select"})
+              // ancestry使用する場合。
               -# = f.collection_select(:category_id, @category_parent_array, :id, :name, {prompt: "---"}, {class: 'categoryWrapper__box--select', id: 'parent_category'})
       %h2.newArticles__menu
         .newArticles__menu--title
@@ -35,13 +36,13 @@
         %span.requireBox
           必須
         .newArticles__menu--form
-          = f.text_area :menu, class: "menu"
+          = f.text_area :menu, placeholder: "例: アサイーボウル（税込¥900）", class: "menu"
       %h2.newArticles__rule
         .newArticles__rule--title
         = f.label :利用ルール
         %span.requireBox
           必須
         .newArticles__rule--form
-          = f.text_area :rule, class: "rule"
+          = f.text_area :rule, placeholder: "例: 予約制、数量限定、テイクアウト可能時間", class: "rule"
       %h2.newArticles__btn
         = f.submit "送信", class: "submit-btn"
