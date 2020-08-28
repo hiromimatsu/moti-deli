@@ -14,13 +14,13 @@ class Article < ApplicationRecord
     end
   end
 
-  # def self.category(category_id)
-  #   if search
-  #     Article.where(category_id: category_id)
-  #   else
-  #     Article.all
-  #   end
-  # end
+  def self.category(area_id)
+    if search
+      Article.where(area_id: area_id)
+    else
+      Article.all
+    end
+  end
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   

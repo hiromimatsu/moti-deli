@@ -3,8 +3,7 @@ class ArticlesController < ApplicationController
   # before_action :set_item, except: [:]
 
   def index
-    @articles = Article.all
-    # @articles = Article.where(area_id: params[:area_id]).includes(:user)
+    @articles = Article.where(area_id: params[:area_id]).includes(:user)
   end
 
   def new
