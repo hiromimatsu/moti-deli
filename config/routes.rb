@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'articles#search'
+  root 'articles#search'
 
   resources :users, only: :show
   resources :articles do
