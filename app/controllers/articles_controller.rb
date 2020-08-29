@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
   before_action :move_to_index, expect: [:index, :search]
-  # before_action :set_item, except: [:]
 
   def index
     @articles = Article.where(area_id: params[:area_id]).includes(:user)
@@ -9,12 +8,14 @@ class ArticlesController < ApplicationController
   def new
     @article = Article.new
     
+    # anceatry使用する場合（親）
     # @category_parent_array = []
     # Category.where(ancestry: nil).each do |parent|
     #   @category_parent_array << parent
     # end
   end
 
+  # ancestry使用する場合（子）
   # def get_category_children
   #   @category_children = Category.find_by(id: "#{params[:parent_id]}", ancestry: nil).children
   # end
@@ -78,8 +79,4 @@ class ArticlesController < ApplicationController
       redirect_to action: :index
     end
   end
-
-  # def set_item
-  #   @article = Article.find(params[:id])
-  # end
 end

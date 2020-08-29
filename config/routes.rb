@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'articles#search'
-  
-  # resources :areas, only: [:new, :create]
+  root to: 'articles#search'
+
+  resources :users, only: :show
   resources :articles do
     resources :likes, only: [:create, :destroy]
     collection do 
@@ -13,5 +13,4 @@ Rails.application.routes.draw do
       get 'get_category_children', defaults: { format: 'json' }
     end
   end
-  resources :users, only: :show
 end
