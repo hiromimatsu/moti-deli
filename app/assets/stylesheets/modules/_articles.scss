@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+// 新規投稿、編集のヘッダー
 .Contents {
   text-align: center;
   color: gray;
@@ -10,7 +11,6 @@
   padding: 10px;
   color: white;
   background-color: orange;
-
   a {
     text-decoration: none;
     color: white;
@@ -18,6 +18,7 @@
   }
 }
 
+//入力フォーム
 .formContents {
   display: flex;
   justify-content: center;
@@ -35,7 +36,7 @@ span.requireBox {
   border-radius: 5px;
 }
 
-.restaurant, .instagram {
+.restaurant {
   width: 400px;
 }
 
@@ -58,10 +59,11 @@ span.requireBox {
   height: 30px;
 }
 
-.categoryWrapperEdit__box--select {
-  width:400px;
-  height: 30px;
-}
+// ancestry子要素
+// .categoryWrapperEdit__box--select {
+//   width:400px;
+//   height: 30px;
+// }
 
 .newArticles__btn {
   text-align: center;

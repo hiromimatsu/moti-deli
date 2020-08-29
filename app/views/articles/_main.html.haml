@@ -3,3 +3,9 @@
     .Article__list
     - @articles.each do |article|
       = link_to image_tag(article.image.url, class: "main-image"), article_path(article.id), method: :get
+    
+  - if user_signed_in? && current_user.id
+    .sellBtn
+      = link_to new_article_path, method: :get, class: "sellBtn__link" do
+        %p.sellBtn__link__text 投稿する
+        = image_tag ("btn045_02.png"), class: "sellBtn__link__icon"

@@ -1,66 +1,104 @@
+// トップページ
 .Header {
   height: 100px;
   font-family: 'Hiragino Maru Gothic ProN';
-  
-  .Top {
-    height: 60px;
-    background-color: orange;
+}
+
+
+// ヘッダー上
+.top {
+  height: 60px;
+  background-color: orange;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 7px;
+}
+
+
+// ヘッダー上→左（タイトル側）
+.topTitle {
+  display: flex;
+  // margin-left: 10px;
+  &__theme {
+    color: white;
+    font-size: 30px;
+  }
+  &__search {
+    margin-left: 20px;
     display: flex;
-    justify-content: space-between;
-    padding-top: 7px;
-    &__Title {
-      color: white;
-      font-size: 30px;
-      display: flex;
-      margin-left: 10px;
-      &__Search {
-        margin-left: 20px;
-        &__Form {
-          border-radius: 10px;
-          padding-left: 10px;
-          font-size: 20px;
-        }
-      }
-    }
-    &__UserNav {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
+    &__form {
+      border-radius: 5px;
+      padding-left: 10px;
       font-size: 20px;
       margin: 10px;
-      padding-bottom: 7px;
-      &__Btn {
-        &--Post {
-          border-radius: 20px;
-          background-color: white;
-          padding: 15px 20px;
-          margin-right: 10px;
-        }
-      }
-      a {
-        text-decoration: none;
-        color: orange;
-      }
     }
   }
-  
-  .Area {
-    height: 40px;
-    background-color: wheat;
-    font-size: 20px;
-    &__Region {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 7px;
+}
+
+// ヘッダー上→右 （ユーザーナビ側）
+.userNav {
+  display: flex;
+  &__btn1 {
+    position: relative;
+    &__link {
+      // position: fixed;
+      // height: 150px;
+      // width: 150px;
+      // bottom: 30px;
+      // right: 30px;
+      text-align: center;
+      border-radius: 4%;
+      border: none;
+      transition: 0.5s;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    &__text {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      // right: 5px;
+      // padding: 15px 0 5px 0;
+    }
     a {
       text-decoration: none;
-      color: black;
-    }
-      &__Select {
-        box-pack: justify;
-        margin-left: 20px;
-      }
+      color: orange;
+      font-size: 20px;
     }
   }
+}
+
+.user-btn {
+  height: 40px;
+  width: 130px;
+  margin: 5px;
+}
+
+.userNav__btn1:hover {
+  opacity: 0.75;
+}
+
+// ヘッダー下  （最寄駅）
+.Area {
+  height: 40px;
+  background-color: wheat;
+  font-size: 20px;
+  &__Region {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 7px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+    &__Select {
+      box-pack: justify;
+      margin-left: 40px;
+    }
+  }
+}
+
+.Area__Region__Select:hover {
+  opacity: 0.55;
 }

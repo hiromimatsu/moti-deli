@@ -1,3 +1,4 @@
+// カテゴリー機能、全国パターン新規投稿ページ
 document.addEventListener("turbolinks:load"
 , function () {
 

@@ -60,6 +60,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'ancestry'
+gem 'active_hash'
 
 group :production do
   gem 'pg'

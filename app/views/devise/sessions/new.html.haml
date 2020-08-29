@@ -1,7 +1,7 @@
 .AccountPage
   .AccountPage__title
     %h2 ログイン
-    = render "devise/shared/links"
+    -# = render "devise/shared/links"
   .AccountPage__form
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .FormField
@@ -17,3 +17,7 @@
             = f.password_field :password, autocomplete: "off"
         .actions
           = f.submit "ログイン", class: 'Button UserButton'
+        
+        .acount-redirect
+          アカウントをお持ちでない方は
+          =link_to "こちら", "/users/sign_up"

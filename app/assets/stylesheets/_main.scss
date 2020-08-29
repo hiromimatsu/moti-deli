@@ -1,3 +1,4 @@
+// 商品一覧
 .Main {
   height: calc(100vh - 100px);
   overflow: scroll;
@@ -20,4 +21,39 @@
   height: 240px;
   border-radius: 10px;
   margin-left: 5px;
+}
+
+// 投稿ボタン
+.sellBtn {
+  position: relative;
+  &__link {
+    position: fixed;
+    height: 150px;
+    width: 150px;
+    bottom: 30px;
+    right: 30px;
+    text-align: center;
+    border-radius: 4%;
+    color: #fff;
+    border: none;
+    transition: 0.5s;
+    font-size: 30px;
+    text-decoration: none;
+    &__text {
+      position: absolute;
+      bottom: 50px;
+      right: 25px;
+      font-size: 25px;
+      font-weight: bold;
+      padding: 15px 0 5px 0;
+    }
+    &__icon {
+      height: 150px;
+      width: 150px;
+    }
+  }
+}
+
+.sellBtn:hover {
+  opacity: 0.75;
 }
