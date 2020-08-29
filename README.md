@@ -14,14 +14,14 @@
 テイクアウトメニューを共有するアプリケーションで、
 新たにテイクアウトを開始した店舗の情報を拡散するために作成しました。
 
-![motideli-top](https://user-images.githubusercontent.com/67889926/91436460-210c7800-e8a3-11ea-97e8-fd90cffebeb1.jpg)
+![motideli top2](https://user-images.githubusercontent.com/67889926/91624217-ece7a300-e9d9-11ea-9a00-32f4d99930fe.jpg)
 
 ## 🌐 App URL
 
 ### **https://moti-deli.herokuapp.com**
 
 ## 工夫したポイント
-「必要な情報をシンプルに。」テイクアウトするのに欲しい情報をすぐに取得できるアプリケーションを作りました。また、直感的に店舗選択をするため画像一覧から選べるようにしました。
+「必要な情報をシンプルに。」テイクアウトするのに欲しい情報をすぐに取得できるアプリケーションを作りました。また、直感的に店舗選択をするため画像一覧から選べるようにしております。
 
 ## 課題や今後実装したい機能
 - マップ機能追加で店舗の位置情報取得
@@ -33,7 +33,7 @@
 
 ## テストアカウント
 - メールアドレス: test_user@gmail.com
-- パスワード: test_user
+- パスワード: test_user 
 
 ## 開発環境
 - 言語: Ruby
@@ -50,38 +50,17 @@
 |email|string|null: false|
 |password|string|null: false|
 ### Association
-- has_many :areas, through: :areas_users
-- has_many :areas_users
-_ has_many :articles
-
-## areasテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string||
-### Association
-- has_many :users, through: areas_users
-- has_many :areas_users
 - has_many :articles
 
 ## articlesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |restaurant|string|null: false|
-|image|string¥¥|null: false|
-|instagram|string|null: false|
+|image|string|null: false|
 |menu|text|null: false|
 |rule|text|null :false|
-|area_id|integer|null: false,foreign_key: true|
-|user_id|integer|null: false,foreign_key: true|
+|area_id|integer|null: false|
+|user_id|references|null: false,foreign_key: true|
 ### Association
-- belongs_to :area
 - belongs_to :user
-
-## areas_usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false,foreign_key: true|
-|group_id|integer|null: false,foreign_key: true|
-### Association
-- belongs_to :area
-- belongs_to :user
+- belongs_to_active_hash :area
