@@ -22,7 +22,6 @@ document.addEventListener("turbolinks:load"
         dataType: 'json'
       })
       .done(function(articles) {
-        console.log(articles)
         search_list.empty();
         if (articles.length !== 0) {
           articles.forEach(function(article){
