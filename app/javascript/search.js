@@ -4,7 +4,7 @@ document.addEventListener("turbolinks:load"
     var search_list = $(".Article");
     function appendArticle(article){
       var html =
-        `<a href="/articles/${article.id}" data-method="get">
+       `<a href="/articles/${article.id}" data-method="get">
           <img src="${article.image.url}" class="main-image">
         </a>`
       search_list.append(html);
