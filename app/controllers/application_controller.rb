@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
-  protect_from_forgery with: :exception
+  # protect_from_forgery with: :exception
 
   # def after_sign_out_path_for(resource)
   #   root_path
@@ -21,5 +21,5 @@ class ApplicationController < ActionController::Base
   end
   
   # Basic認証
-  http_basic_authenticate_with name: ENV['BASIC_AUTH_NAME'], password: ENV['BASIC_AUTH_PASSWORD'] if Rails.env == "production"
+  # http_basic_authenticate_with name: ENV['BASIC_AUTH_NAME'], password: ENV['BASIC_AUTH_PASSWORD'] if Rails.env == "production"
 end
