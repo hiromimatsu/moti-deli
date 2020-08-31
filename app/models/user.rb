@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :articles
-  has_many :likes
        
   validates :name, presence: true, uniqueness: true
+  validates :email, uniqueness: {case_sensitive: false}, format: {with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i , message:"メールアドレスを正しく入力してください"},presence: true
+  validates :password, length: {minimum: 8},presence: true
 end

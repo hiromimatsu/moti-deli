@@ -1,7 +1,12 @@
 class Article < ApplicationRecord
   belongs_to :user
-
   mount_uploader :image, ImageUploader
+
+  validates :restaurant, presence: true
+  validates :image, presence: true
+  validates :menu, presence: true
+  validates :rule, presence: true
+  validates :area_id, presence: true
 
   
   def self.search(search)
