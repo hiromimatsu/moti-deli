@@ -6,6 +6,14 @@ class ApplicationController < ActionController::Base
   #   root_path
   # end
 
+  def self.search(search) 
+    if search
+      Article.where('restaurant LIKE ? OR menu LIKE ?', "%#{search}%", "%#{search}%")
+    else
+      Article.all
+    end
+  end
+
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
