@@ -21,12 +21,5 @@ class ApplicationController < ActionController::Base
   end
   
   # Basic認証
-  # http_basic_authenticate_with :name => ENV['BASIC_AUTH_USERNAME'], :password => ENV['BASIC_AUTH_PASSWORD'] if Rails.env == "production"
-
-  private
-  def basic
-    authenticate_or_request_with_http_basic do |name, password|
-      name == ENV['BASIC_AUTH_NAME'] && password == ENV['BASIC_AUTH_PASSWORD'] if Rails.env == "production"
-    end
-  end
+  http_basic_authenticate_with name: ENV['BASIC_AUTH_NAME'], password: ENV['BASIC_AUTH_PASSWORD'] if Rails.env.production?
 end
