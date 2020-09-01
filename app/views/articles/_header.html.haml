@@ -15,7 +15,7 @@
             %p.userNav__btn1__text マイページ
             = image_tag ("btn053_09.png"), class:"user-btn"
         .userNav__btn1
-          =link_to destroy_user_session_path, method: :delete, class: "userNav__btn1__link" do
+          =link_to destroy_user_session_path, class: "userNav__btn1__link", method: :delete do
             %p.userNav__btn1__text ログアウト
             = image_tag ("btn053_09.png"), class:"user-btn"
       - else
