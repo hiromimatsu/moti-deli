@@ -15,7 +15,7 @@
 テイクアウトメニューを共有するアプリケーションで、
 新たにテイクアウトを開始した店舗の情報を拡散するために作成しました。
 
-![motideli top2](https://user-images.githubusercontent.com/67889926/91624217-ece7a300-e9d9-11ea-9a00-32f4d99930fe.jpg)
+![motideli-top3](https://user-images.githubusercontent.com/67889926/91924502-d741e880-ed0d-11ea-8082-efec705fc56a.jpg)
 
 ## 🌐 App URL
 
