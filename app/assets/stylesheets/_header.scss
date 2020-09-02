@@ -18,7 +18,7 @@
 // ヘッダー上→左（タイトル側）
 .topTitle {
   display: flex;
-  // margin-left: 10px;
+  margin-left: 10px;
   &__theme {
     color: white;
     font-size: 30px;
@@ -82,19 +82,20 @@
 .Area {
   height: 40px;
   background-color: wheat;
-  font-size: 20px;
+  font-size: 17px;
+  overflow: scroll;
   &__Region {
   display: flex;
   justify-content: center;
-  align-items: center;
   padding-top: 7px;
+  
   a {
     text-decoration: none;
     color: black;
   }
     &__Select {
       box-pack: justify;
-      margin-left: 40px;
+      margin: 0 10px;
     }
   }
 }
